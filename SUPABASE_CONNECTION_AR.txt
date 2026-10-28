@@ -1,0 +1,10 @@
+إعداد اتصال Speed Go بـ Supabase
+
+Project URL: https://xvtbfncfkdzsxfuwrdmr.supabase.co
+Edge Functions base URL: https://xvtbfncfkdzsxfuwrdmr.supabase.co/functions/v1
+Send OneSignal notification function: https://xvtbfncfkdzsxfuwrdmr.supabase.co/functions/v1/send-onesignal-notification
+
+تمت إضافة الروابط إلى ملفات shared/config.js أو نسخ config.js الموجودة داخل الحزمة.
+مهم: هذا لا يعني أن إرسال الإشعارات تم اختباره. الدالة تتطلب جلسة مستخدم مصادقًا عليه وصلاحية مدير، كما تتطلب ONESIGNAL_APP_ID و ONESIGNAL_REST_API_KEY في أسرار Supabase.
+لا تضع REST API Key أو Service Role Key في ملفات الواجهة العامة.
+يجب أن يطابق OneSignal External ID معرّف مستخدم Supabase حتى يصل الإشعار إلى الجهاز المستهدف.

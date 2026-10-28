@@ -1,0 +1,57 @@
+{
+  "name": "trip-rider-driver-admin",
+  "version": "1.2.0",
+  "private": true,
+  "description": "TRIP unified PWA and admin dashboard; Capacitor Android/iOS and Windows admin wrapper",
+  "scripts": {
+    "check": "node scripts/check-project.js",
+    "cap:sync": "cap sync android",
+    "cap:add:android": "cap add android",
+    "android:build": "cd android && gradle assembleDebug",
+    "build:windows": "electron-builder --win portable",
+    "cap:add:ios": "cap add ios"
+  },
+  "dependencies": {
+    "@capacitor/android": "^7.4.3",
+    "@capacitor/core": "^7.4.3"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^7.4.3",
+    "typescript": "^5.8.3",
+    "electron": "^35.0.0",
+    "electron-builder": "^26.0.12"
+  },
+  "main": "electron/main.cjs",
+  "build": {
+    "appId": "ly.trip.admin",
+    "productName": "TRIP Admin",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "electron/**/*",
+      "admin-tools.html",
+      "index.html",
+      "styles.css",
+      "icon.svg",
+      "shared/**/*",
+      "web/**/*",
+      "app.js",
+      "manifest.json",
+      "sw.js"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "portable": {
+      "artifactName": "TRIP-Admin-${version}-Windows-${arch}.${ext}"
+    }
+  }
+}
